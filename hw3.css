@@ -131,7 +131,7 @@ p {
     padding: 10px;
     border-spacing: 2px;
     border-radius: 20px;
-    color: Pick a red;
+    color:red;
 }
 
 #review {
@@ -202,8 +202,8 @@ td.outputdata {
     background-color: white;
     border-width: 1px;
     border-style: solid;
-    color: red;
-    border-color: red;
+    color: black;
+    border-color: black;
     font-size: 15px;
     font-weight: bold;
     height: 20px;
