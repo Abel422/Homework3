@@ -29,12 +29,8 @@ function validateFname() {
     if (fname === "") {
         document.getElementById("fname-error").innerHTML = "First name is required.";
         return false;
-    } else if (fname != "") {
-        if (fname.match(namePattern)) {
+    } else if (!fname.match(namePattern)) {
         document.getElementById("fname-error").innerHTML = "Letters, apostrophes and dashes only.";
-        return false;
-    } else if (fname.length < 1) {
-        document.getElementById("fname-error").innerHTML = "First name must be at least 1 character long.";
         return false;
     } else if (fname.length > 30) {
         document.getElementById("fname-error").innerHTML = "First name cannot be longer than 30 characters.";
@@ -43,7 +39,6 @@ function validateFname() {
         document.getElementById("fname-error").innerHTML = "";
         return true;
     }
-}
 }
 
 
@@ -291,11 +286,11 @@ function validateCpass() {
     pword2 = document.getElementById("cpass").value;
 
     if (pword1 !== pword2) {
-        document.getElementById("pword2-error").innerHTML = 
+        document.getElementById("cpass-error").innerHTML = 
         "Passwords don't match";
         return false;
     } else {
-        document.getElementById("pword2-error").innerHTML = 
+        document.getElementById("cpass-error").innerHTML = 
         "Passwords match";
         return true;
     }
@@ -449,7 +444,8 @@ function validateForm() {
     }
     if (valid) {
         document.getElementById("submit").disabled = false;
-    } else {
+    } 
+    else {
         showAlert();
     }
 }
