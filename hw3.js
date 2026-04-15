@@ -280,9 +280,8 @@ function validatePass() {
     }
 
     const errorContainer = document.querySelector(".pass-message");
-    errorContainer.innerHTML = errorMessage
-    .map(msg => `<span>${msg}</span><br>`)
-    .join("");
+    errorContainer.innerHTML = errorMessage.map(msg => `<span>${msg}</span><br>`).join("");
+    return errorMessage.length === 0;
 }
 
 
