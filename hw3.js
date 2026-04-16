@@ -66,12 +66,8 @@ function validateLname() {
     if (lname === "") {
         document.getElementById("lname-error").innerHTML = "Last name is required.";
         return false;
-    } else if (lname != "") {
-        if (lname.match(namePattern)) {
+    } else if (!lname.match(namePattern)) {
         document.getElementById("lname-error").innerHTML = "Letters, apostrophes and dashes only.";
-        return false;
-    } else if (lname.length < 1) {
-        document.getElementById("lname-error").innerHTML = "Last name must be at least 1 character long.";
         return false;
     } else if (lname.length > 30) {
         document.getElementById("lname-error").innerHTML = "Last name cannot be longer than 30 characters.";
@@ -80,7 +76,6 @@ function validateLname() {
         document.getElementById("lname-error").innerHTML = "";
         return true;
     }
-}
 }
 
 
